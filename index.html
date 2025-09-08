@@ -111,6 +111,49 @@
         <img src="./assets/hero-leaf2.png" alt="" class="" />
       </div>
     </section>
+
+    <!-- Choose your trees  -->
+    <section class="bg-[#CFF0DC70] py-10 md:py-14">
+      <div class="w-11/12 mx-auto">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12">Choose Your Trees</h2>
+      
+          <!-- category/left aside  -->
+          <div class="flex flex-col lg:flex-row gap-6">
+            <aside class="w-full lg:w-80 bg-white rounded-lg p-4">
+              <h4 class="font-semibold mb-4">Categories</h4>
+              <div id="category-container" class="space-y-2"></div>
+            </aside>
+
+            <!-- Grid section  -->
+          <section class="flex-1">
+            <!-- loading spinner -->
+            <div id="spinner" class="flex justify-center items-center py-20 hidden">
+              <span class="loading loading-dots loading-xl"></span>
+            </div>
+
+            <!-- card container  -->
+            <div id="tree-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="text-center col-span-full py-20">
+                <p class="text-gray-500">Select a category to view trees</p>
+              </div>
+             </div>
+          </section>
+  
+          <!-- card sidebar/right aside -->
+          <aside class="w-full lg:w-80 bg-white rounded-lg shadow-sm p-4">
+            <h4 class="font-semibold mb-4">Your Cart</h4>
+
+            <div id="cart-container" class="space-y-3 mb-4 max-h-96 overflow-y-auto"></div>
+            <div>
+              <div class="flex justify-between items-center">
+                <span class="">Total:</span>
+                <span id="total-price" class="text-xl text-green-600">৳</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
     <!-- About the Campaign -->
     <section class="bg-[#CFF0DC70] py-12 md:py-16">
       <div class="w-3/5 mx-auto max-w-6xl">
