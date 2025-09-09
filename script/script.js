@@ -14,7 +14,7 @@ const loadCategories = () => {
     fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((data) => {
-        console.log(data);
+        // console.log(data);
         displayCategories(data.categories);
     });
 };
@@ -56,7 +56,7 @@ const loadAllTrees = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       displayTrees(data.plants);
     })
 };
@@ -70,7 +70,7 @@ const loadTreesByCategory = (id) => {
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
     
         if (data.plants && data.plants.length > 0) {
           displayTrees(data.plants);
@@ -93,16 +93,16 @@ const displayTrees = (trees) => {
     
     trees.forEach(tree => {
       const card = document.createElement("div");
-      card.className = "bg-white rounded-lg shadow-sm overflow-hidden";
+      card.className = "bg-white rounded-lg shadow-lg overflow-hidden";
       card.innerHTML = `
         <img src="${tree.image}" alt="${tree.name}" class="w-full h-48 object-cover">
-        <div class="p-4 space-y-3">
+        <div class="p-4 space-y-3 flex-1">
           <h3 class="font-bold text-lg cursor-pointer hover:text-green-600" onclick="showDetails(${tree.id})">
             ${tree.name}
           </h3>
           <p class="text-sm text-gray-600">${tree.description || 'No description available'}</p>
           <div class="flex justify-between items-center">
-            <span class="badge badge-ghost">${tree.category || 'Uncategorized'}</span>
+            <span class="badge badge-ghost text-[#15803D] bg-[#DCFCE7]">${tree.category || 'Uncategorized'}</span>
             <span class="font-bold">৳${tree.price || 0}</span>
           </div>
           <button onclick="addToCart(${tree.id}, '${tree.name.replace(/'/g, "\\'")}', ${tree.price || 0})" 
@@ -120,7 +120,7 @@ const showDetails = (id) => {
   fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       const tree = data.plants;
       document.getElementById("modal-content").innerHTML = `
         <img src="${tree.image}" alt="${tree.name}" class="w-full h-60 object-cover rounded-lg">
