@@ -14,7 +14,7 @@ const loadCategories = () => {
     fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((data) => {
-        // console.log(data);
+        console.log(data);
         displayCategories(data.categories);
     });
 };
@@ -56,7 +56,7 @@ const loadAllTrees = () => {
     fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((data) => {
-    //   console.log(data);
+      console.log(data);
       displayTrees(data.plants);
     })
 };
@@ -70,7 +70,7 @@ const loadTreesByCategory = (id) => {
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Category plants:", data);
+        console.log(data);
     
         if (data.plants && data.plants.length > 0) {
           displayTrees(data.plants);
@@ -114,6 +114,25 @@ const displayTrees = (trees) => {
       container.appendChild(card);
     });
     manageSpinner(false);
+};
+// Modal
+const showDetails = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      const tree = data.plants;
+      document.getElementById("modal-content").innerHTML = `
+        <img src="${tree.image}" alt="${tree.name}" class="w-full h-60 object-cover rounded-lg">
+        <h2 class="text-2xl font-semibold">${tree.name}</h2>
+        <p>${tree.description || 'No description available'}</p>
+        <div class="flex justify-between">
+          <span class="badge badge-success">${tree.category || 'Uncategorized'}</span>
+          <span class="text-xl font-bold">৳${tree.price || 0}</span>
+        </div>
+      `;
+      document.getElementById("tree_modal").showModal();
+    })
 };
 
 // cart functionality
