@@ -117,8 +117,8 @@
         <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12">Choose Your Trees</h2>
       
           <!-- category/left aside  -->
-          <div class="flex flex-col lg:flex-row gap-6">
-            <aside class="w-full lg:w-80 bg-white rounded-lg p-4">
+          <div class="flex flex-col lg:flex-row gap-4">
+            <aside class="w-full lg:w-80 rounded-lg p-4">
               <h4 class="font-semibold mb-4">Categories</h4>
               <div id="category-container" class="space-y-2"></div>
             </aside>
@@ -131,7 +131,7 @@
             </div>
 
             <!-- card container  -->
-            <div id="tree-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="tree-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 shadow-lg">
               <div class="text-center col-span-full py-20">
                 <p class="text-gray-500">Select a category to view trees</p>
               </div>
@@ -139,7 +139,7 @@
           </section>
   
           <!-- card sidebar/right aside -->
-          <aside class="w-full lg:w-80 bg-white rounded-lg shadow-sm p-4">
+          <aside class="w-full lg:w-80 bg-white rounded-lg shadow-lg p-4">
             <h4 class="font-semibold mb-4">Your Cart</h4>
 
             <div id="cart-container" class="space-y-3 mb-4 max-h-96 overflow-y-auto"></div>
@@ -214,7 +214,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <!-- Card 1 -->
-          <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+          <div class="bg-white rounded-xl shadow-lg p-8 text-center">
             <h3 class="text-2xl md:text-3xl font-semibold text-green-600 mb-2">
               500K+
             </h3>
@@ -222,7 +222,7 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+          <div class="bg-white rounded-xl shadow-lg p-8 text-center">
             <h3 class="text-2xl md:text-3xl font-semibold text-green-600 mb-2">
               120+
             </h3>
@@ -232,7 +232,7 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+          <div class="bg-white rounded-xl shadow-lg p-8 text-center">
             <h3 class="text-2xl md:text-3xl font-semibold text-green-600 mb-2">
               30+
             </h3>
@@ -279,9 +279,9 @@
           <div>
             <select class="select w-full">
               <option disabled selected>Number of Trees</option>
-              <option>1 Tree - $5</option>
-              <option>5 Trees - $25</option>
-              <option>10 Trees - $50</option>
+              <option>1 Tree - ৳500</option>
+              <option>5 Trees - ৳2500</option>
+              <option>10 Trees - ৳5000</option>
             </select>
           </div>
           <input type="submit" value="Donate Now" class="btn w-full rounded-full bg-[#FCD34D] hover:bg-[#FBBF24] border-none text-[#15803D] font-semibold py-3 px-6" />

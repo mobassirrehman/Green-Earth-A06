@@ -31,7 +31,7 @@ const displayCategories = (categories) => {
   categories.forEach(cat => {
     const btn = document.createElement("button");
     btn.id = `btn-${cat.id}`;
-    btn.className = "category-btn w-full text-left px-4 py-2 rounded hover:bg-green-100";
+    btn.className = "category-btn w-full text-left px-4 py-2 rounded hover:bg-green-200";
     btn.onclick = () => loadTreesByCategory(cat.id);
     btn.innerText = cat.category_name;
     container.appendChild(btn);
@@ -168,7 +168,7 @@ const updateCart = () => {
       cartItems.forEach(item => {
         totalPrice += item.price;
         const div = document.createElement("div");
-        div.className = "flex justify-between items-center bg-gray-50 p-3 rounded";
+        div.className = "flex justify-between items-center bg-[#CFF0DC70] p-3 rounded";
         div.innerHTML = `
           <div>
             <p class="font-medium">${item.name}</p>
